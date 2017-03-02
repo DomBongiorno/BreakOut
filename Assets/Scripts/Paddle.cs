@@ -7,14 +7,16 @@ public class Paddle : MonoBehaviour {
 	Rigidbody2D rigidBody;
 	float speed = 5;
 
+
 	void Start () {
 		rigidBody = GetComponent<Rigidbody2D> ();
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 
 		float x = Input.GetAxisRaw ("Horizontal");
-		rigidBody.velocity = new Vector2 (x * 5, 0);
+		x = x * speed;
+		rigidBody.velocity = new Vector2 (x  , 0);
 	}
 }
