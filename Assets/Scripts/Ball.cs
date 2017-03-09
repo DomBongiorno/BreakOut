@@ -10,15 +10,16 @@ public class Ball : MonoBehaviour {
 
 	int lives = 3;
 
-
-	void Start () {
+	void Start () 
+	{
 		startingPosition = transform.position;
 
 		GetComponent<Rigidbody2D> ().velocity = startingVelocity;
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+	{
 		if (transform.position.y < -1.5f) {
 			GetOut ();
 		}
@@ -39,7 +40,17 @@ public class Ball : MonoBehaviour {
 		}
 	}
 
-	void GameOver(){
+	void GameOver()
+	{
 		gameOver.SetActive (true);
+	}
+
+	public void BrickBroken()
+	{
+		var bricksleft = FindObjectsOfType<Brick> ().Length;
+		if (bricksleft == 0) 
+		{
+			Application.LoadLevel ("Level2");
+		}
 	}
 }
