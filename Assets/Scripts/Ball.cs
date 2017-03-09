@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Ball : MonoBehaviour {
 
-	public Vector2 startingVelocity = new Vector2 (0,-15);
+	public Vector2 startingVelocity = new Vector2 (0,-10);
 	private Vector3 startingPosition;
 	public GameObject gameOver;
 

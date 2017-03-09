@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Ball2 : MonoBehaviour {
 
-	public Vector2 startingVelocity = new Vector2 (0,-15);
+	public Vector2 startingVelocity = new Vector2 (0,-10);
 	private Vector3 startingPosition;
 	public GameObject gameOver;
 
@@ -20,7 +20,7 @@ public class Ball2 : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
 	{
-		if (transform.position.y < -3.3f) {
+		if (transform.position.y < -4.8f) {
 			GetOut ();
 		}
 		if (Input.GetButtonDown ("Jump")) {
