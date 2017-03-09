@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Brick : MonoBehaviour {
-	int hits = 2;
+	public int hits = 1;
+	int bricks = 5;
 	// Use this for initialization
 	void Start () {
 		
@@ -14,9 +15,13 @@ public class Brick : MonoBehaviour {
 
 		if (hits == 0) {
 			Break();
+			bricks = bricks - 1;
 		}
+	
 	}
 	void Break(){
 		gameObject.SetActive (false);
 	}
+
+
 }
