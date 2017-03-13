@@ -1,14 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Ball : MonoBehaviour {
 
 	public Vector2 startingVelocity = new Vector2 (0,-10);
 	private Vector3 startingPosition;
 	public GameObject gameOver;
+	public Text livesValue;
+	public Text scoreValue;
 
 	int lives = 3;
+	public int score = 0;
 
 	void Start () 
 	{
@@ -17,7 +22,7 @@ public class Ball : MonoBehaviour {
 		GetComponent<Rigidbody2D> ().velocity = startingVelocity;
 	}
 	
-	// Update is called once per frame
+
 	void Update ()
 	{
 		if (transform.position.y < -1.5f) {
@@ -31,6 +36,7 @@ public class Ball : MonoBehaviour {
 	void GetOut()
 	{
 		lives = lives - 1;
+		livesValue.text = lives.ToString();
 
 		transform.position = startingPosition;
 		GetComponent<Rigidbody2D> ().velocity = new Vector2 ();
@@ -47,10 +53,12 @@ public class Ball : MonoBehaviour {
 
 	public void BrickBroken()
 	{
+		score =score + 10;
+		scoreValue.text = score.ToString ();
 		var bricksleft = FindObjectsOfType<Brick> ().Length;
 		if (bricksleft == 0) 
 		{
-			Application.LoadLevel ("Level2");
+			SceneManager.LoadScene ("Level2");
 		}
 	}
 }

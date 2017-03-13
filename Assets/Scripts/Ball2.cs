@@ -50,7 +50,7 @@ public class Ball2 : MonoBehaviour {
 		var bricksleft = FindObjectsOfType<Brick> ().Length;
 		if (bricksleft == 0) 
 		{
-			Application.LoadLevel ("Level2");
+			
 		}
 	}
 }
