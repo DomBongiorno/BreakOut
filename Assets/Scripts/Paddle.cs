@@ -19,4 +19,5 @@ public class Paddle : MonoBehaviour {
 		x = x * speed;
 		rigidBody.velocity = new Vector2 (x  , 0);
 	}
+		
 }

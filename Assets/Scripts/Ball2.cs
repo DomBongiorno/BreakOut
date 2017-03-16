@@ -13,7 +13,7 @@ public class Ball2 : MonoBehaviour {
 	public Text scoreValue;
 
 	int lives = 3;
-	public int score = 0;
+	public int value = 0;
 
 	void Start () 
 	{
@@ -51,10 +51,10 @@ public class Ball2 : MonoBehaviour {
 		gameOver.SetActive (true);
 	}
 
-	public void BrickBroken()
+	public void BrickBroken(int amount)
 	{
-		score =score + 10;
-		scoreValue.text = score.ToString ();
+		value =value + amount;
+		scoreValue.text = value.ToString ();
 		var bricksleft = FindObjectsOfType<Brick> ().Length;
 		if (bricksleft == 0) 
 		{

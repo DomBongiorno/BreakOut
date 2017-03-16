@@ -52,10 +52,11 @@ public class Ball : MonoBehaviour {
 		gameOver.SetActive (true);
 	}
 
-	public void BrickBroken()
+	public void BrickBrokenOne(int worth)
 	{
-		score =score + 10;
+		score =score + worth;
 		scoreValue.text = score.ToString ();
+
 		var bricksleft = FindObjectsOfType<Brick1> ().Length;
 		if (bricksleft == 0) 
 		{

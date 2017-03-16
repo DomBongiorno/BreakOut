@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Brick : MonoBehaviour {
 	public int hits = 1;
+	public int points = 10;
 
 	// Use this for initialization
 	void Start () {
@@ -16,7 +17,7 @@ public class Brick : MonoBehaviour {
 
 		if (hits == 0) {
 			gameObject.SetActive (false);
-			FindObjectOfType<Ball2> ().BrickBroken ();
+			FindObjectOfType<Ball2> ().BrickBroken(points);
 		
 		}
 	
