@@ -9,6 +9,8 @@ public class Ball2 : MonoBehaviour {
 	private Vector3 startingPosition;
 	public GameObject gameOver;
 	public GameObject youWin;
+	public GameObject longpaddle;
+	public GameObject shortpaddle;
 	public Text livesValue;
 	public Text scoreValue;
 
@@ -27,6 +29,8 @@ public class Ball2 : MonoBehaviour {
 	{
 		if (transform.position.y < -4.8f) {
 			GetOut ();
+			longpaddle.SetActive (false);
+			shortpaddle.SetActive (true);
 		}
 		if (Input.GetButtonDown ("Jump")) {
 			GetComponent<Rigidbody2D> ().velocity = startingVelocity;
