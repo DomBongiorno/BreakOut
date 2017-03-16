@@ -9,6 +9,7 @@ public class Ball : MonoBehaviour {
 	public Vector2 startingVelocity = new Vector2 (0,-10);
 	private Vector3 startingPosition;
 	public GameObject gameOver;
+	public GameObject youWin;
 	public Text livesValue;
 	public Text scoreValue;
 
@@ -55,10 +56,10 @@ public class Ball : MonoBehaviour {
 	{
 		score =score + 10;
 		scoreValue.text = score.ToString ();
-		var bricksleft = FindObjectsOfType<Brick> ().Length;
+		var bricksleft = FindObjectsOfType<Brick1> ().Length;
 		if (bricksleft == 0) 
 		{
-			SceneManager.LoadScene ("Level2");
+			youWin.SetActive (true);
 		}
 	}
 }
